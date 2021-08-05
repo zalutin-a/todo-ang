@@ -1,0 +1,32 @@
+.pages-list{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  gap: 10px;
+  max-width: 300px;
+  margin: 0 auto;
+  margin-top: 20px;
+
+  &__item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+    width: 20px;
+    height: 25px;
+    border-radius: 1px;
+    cursor: pointer;
+
+
+    &_active{
+      background-color: rgb(111, 177, 201);
+    }
+
+    &:hover{
+      background-color: rgb(111, 177, 201);
+    }
+  }
+
+}

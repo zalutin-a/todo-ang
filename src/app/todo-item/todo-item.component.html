@@ -1,0 +1,9 @@
+<div [ngClass]='{todoItem: true, todoItem_complete: curentTodo.completed}' >
+  <input [class.todoItem__comlete-check]='true' [checked]='curentTodo.completed' type="checkbox" [id]='curentTodo._id' (change) = 'changeComplete($event)'>
+  <label [class.todoItem__comlete-check_label]='true' [class.todoItem__comlete-check_label-active]='curentTodo.completed' [for]='curentTodo._id'></label>
+  <span *ngIf="!editMode" [class.todoItem__text] = 'true' [class.todoItem__text_done] = 'curentTodo.completed'>{{textContent}}</span>
+  <!-- <input *ngIf="editMode" [ngClass]='{todoItem__text_edit: true}' type="text" #changeInput value="{{textContent}}" (input) = 'changeTextContent(changeInput.value)'> -->
+  <input *ngIf="editMode" #editInput [ngClass]='{todoItem__text_edit: true}' type="text" [value]="textContent" (input)='changeTextContent(editInput.value)'>
+  <button [class.todoItem__btn_edit]='true' (click) = 'changeEditMode($event)'>{{ editMode ? 'save' : 'change' }}</button>
+  <button [class.todoItem__btn_delete]='true' (click) = 'deleteTodo($event)'>delete</button>
+</div>

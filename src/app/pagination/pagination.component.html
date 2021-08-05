@@ -1,0 +1,7 @@
+<ul [ngClass]="{'pages-list': true}">
+  <li *ngFor="let item of todoService.todosStore; let i = index"
+      [ngClass]="{'pages-list__item': true, 'pages-list__item_active': i+1 === todoService.activePage}"
+      (click)="changePage(i+1)">
+      {{i + 1}}
+  </li>
+</ul>

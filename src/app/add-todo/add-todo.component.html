@@ -1,0 +1,4 @@
+<form [ngClass]="{addTodo: true}" action="">
+  <input [ngClass]="{addTodo__input: true}" [value]="value" #inputAdd (input) = "changeValue(inputAdd.value)" type="text" placeholder="add new todo">
+  <button [ngClass]="{addTodo__btn: true}" (click) = "addTodo()">add</button>
+</form>
